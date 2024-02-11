@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+	<title>Reps - Bodyweight Exercises</title>
+	<subtitle>Info about my Reps app.</subtitle>
+	<link href="https://reps.hop.ie/feed/feed.xml" rel="self"/>
+	<link href="https://reps.hop.ie/"/>
+	<updated>2024-02-11T00:00:00Z</updated>
+	<id>https://reps.hop.ie/</id>
+	<author>
+		<name>Donovan Hutchinson</name>
+		<email>reps@hop.ie</email>
+	</author>
+	
+	<entry>
+		<title>Getting started with Reps app</title>
+		<link href="https://reps.hop.ie/blog/firstpost/"/>
+		<updated>2024-02-11T00:00:00Z</updated>
+		<id>https://reps.hop.ie/blog/firstpost/</id>
+		<content type="html">&lt;p&gt;Content to come...&lt;/p&gt;
+</content>
+	</entry>
+</feed>
