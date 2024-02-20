@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://reps.hop.ie/blog/firstpost/</loc>
-		<lastmod>2024-02-11</lastmod>
+		<loc>https://reps.hop.ie/dev-diary-01/</loc>
+		<lastmod>2024-02-09</lastmod>
 	</url>
 	
 	<url>
@@ -27,7 +27,22 @@
 	</url>
 	
 	<url>
-		<loc>https://reps.hop.ie/tags/todo/</loc>
+		<loc>https://reps.hop.ie/tags/dev/</loc>
 		<lastmod>2024-02-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://reps.hop.ie/tags/dev-diary/</loc>
+		<lastmod>2024-02-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://reps.hop.ie/privacy/</loc>
+		<lastmod>2024-02-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://reps.hop.ie/dev-diary-02/</loc>
+		<lastmod>2024-02-19</lastmod>
 	</url>
 </urlset>
