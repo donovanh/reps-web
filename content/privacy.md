@@ -1,7 +1,9 @@
 ---
 layout: layouts/home.njk
 permalink: /privacy/
-eleventyExcludeFromCollections: true
+eleventyNavigation:
+  key: Privacy
+  order: 3
 ---
 
 # Privacy Policy

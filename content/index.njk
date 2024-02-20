@@ -3,16 +3,21 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
-numberOfLatestPostsToShow: 3
+numberOfLatestPostsToShow: 5
 ---
 
 <h1>Reps</h1>
 
-<p>This is an app I'm working on for tracking and progressing in bodyweight exercises.</p>
+<p>Get strong with bodyweight exercises - no equipment needed*. Reps tracks your weekly workouts and helps you progress.</p>
 
-<p>I'll be building out the content here over time, but for now, here's the <a href="/privacy">privacy policy</a>.</p>
+<p>With easy routine building and guided progressions, it's never been easier to track your bodyweight fitness journey.</p>
 
-{#
+<p><em>* Except a pull-up bar, tree branch or similar.</em></p>
+
+<div class="testflight-callout">
+	<p>Reps is currently available as a super-early <a href="https://testflight.apple.com/join/Keq4Mca2">test version on TestFlight</a></p>
+</div>
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
@@ -25,7 +30,7 @@ numberOfLatestPostsToShow: 3
 {% if morePosts > 0 %}
 <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
 {% endif %}
-#}
+
 
 {# List every content page in the project #}
 {#
