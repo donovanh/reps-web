@@ -9,7 +9,8 @@
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-		"deploy": "git push origin main && yarn build && gh-pages -d _site"
+		"deploy": "git push origin main && yarn build && gh-pages -d _site",
+		"new": "node ./scripts/makePost"
 	},
 	"repository": {
 		"type": "git",
