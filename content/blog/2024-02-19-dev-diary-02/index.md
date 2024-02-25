@@ -1,5 +1,5 @@
 ---
-title: "Reps Dev Diary #2: TestFlight & Timers"
+title: "TestFlight & Timers"
 permalink: /dev-diary-02/
 description: Some early testing, feedback and improvements
 date: 2024-02-19

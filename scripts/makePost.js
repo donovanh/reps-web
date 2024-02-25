@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const pathModule = require("path");
-// const slugify = require("slugify");
+const slugify = require("slugify");
 
 function pad(n, width, z) {
 	z = z || "0";
@@ -10,55 +10,28 @@ function pad(n, width, z) {
 	return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
+const title = process.argv[2];
 const dt = new Date();
 const today = `${dt.getFullYear()}-${pad(dt.getMonth() + 1, 2)}-${pad(
 	dt.getDate(),
 	2
 )}`;
 
-function findLatestDevDiaryNumber() {
-	const blogPath = "./content/blog/";
-
-	// Read the list of folders in the blogPath
-	const folders = fs
-		.readdirSync(blogPath, { withFileTypes: true })
-		.filter((dirent) => dirent.isDirectory())
-		.map((dirent) => dirent.name)
-		.filter((name) => name.includes("dev-diary-"))
-		.sort((a, b) => {
-			// Sort folders based on the date embedded in the folder name
-			const regex = /dev-diary-(\d+)/;
-			const matchA = regex.exec(a);
-			const matchB = regex.exec(b);
-
-			if (matchA && matchB) {
-				return parseInt(matchB[1]) - parseInt(matchA[1]);
-			}
-
-			return 0;
-		});
-
-	if (folders.length > 0) {
-		const latestFolder = folders[0];
-		const regex = /dev-diary-(\d+)/;
-		const match = regex.exec(latestFolder);
-
-		if (match) {
-			const devDiaryNumber = parseInt(match[1]);
-			return devDiaryNumber;
-		}
-	}
-
-	// If no matching folder is found
-	return null;
+function titleCase(str) {
+	return str
+		.toLowerCase()
+		.split(" ")
+		.map(function (word) {
+			return word.charAt(0).toUpperCase() + word.slice(1);
+		})
+		.join(" ");
 }
 
-const devDiaryNum = findLatestDevDiaryNumber();
-const path = `./content/blog/TEST-${today}-dev-diary-${devDiaryNum}/index.md`;
+const path = `./content/blog/${today}-${slugify(title.toLowerCase())}/index.md`;
 
 const fileContent = `---
-title: "Reps Dev Diary #${devDiaryNum}: TITLE HERE"
-permalink: /dev-diary-${devDiaryNum}/
+title: ${titleCase(title)}
+permalink: /${slugify(title.toLowerCase())}/
 description: A description that will show as subtitle and also on social sharing
 date: ${today}
 tags:

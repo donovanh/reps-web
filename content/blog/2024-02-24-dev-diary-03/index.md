@@ -1,5 +1,5 @@
 ---
-title: "Reps Dev Diary #3: iCloud and screen sizes"
+title: "iCloud and screen sizes"
 permalink: /dev-diary-03/
 description: Storing important data to the cloud, and adjusting layouts based on screen sizes
 date: 2024-02-24
