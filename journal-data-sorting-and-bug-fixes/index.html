@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Journal Data Sorting And Bug Fixes</title>
+		<meta name="description" content="A description that will show as subtitle and also on social sharing">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Reps - Bodyweight Exercises">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Reps - Bodyweight Exercises">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050f;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+main img {
+	height: auto;
+	max-width: 100%;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em 0.5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+.testflight-callout {
+	border: 4px solid rgba(255, 255, 255, 0.25);
+	border-radius: 1rem;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 2rem;
+	text-align: center;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Reps - Bodyweight Exercises</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+					<li class="nav-item"><a href="/privacy/">Privacy</a></li>
+				<li><a href="https://testflight.apple.com/join/Keq4Mca2" target="_blank">TestFlight</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Journal Data Sorting And Bug Fixes</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-03-02">02 March 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a>, </li>
+	<li><a href="/tags/dev-diary/" class="post-tag">dev-diary</a></li>
+</ul>
+
+<p>This week saw the beginning of a new view, the Journal view. This is where users will find their training history, and eventually some insights into their progress. A goal of this app is to help people know when it's time to progress to more challenging exercises, and I hope to use this view as a starting point.</p>
+<p>Before I can start with that, I needed to simply list out the recorded data. The app was recording training sessions but not confirming to the user that they were stored, so that was the first goal.</p>
+<h2 id="creating-mock-data-for-previews" tabindex="-1">Creating mock data for previews <a class="header-anchor" href="#creating-mock-data-for-previews">#</a></h2>
+<p>To work on the presentation of saved data, I needed some data to work with. <a href="https://www.hackingwithswift.com/quick-start/swiftdata/how-to-use-swiftdata-in-swiftui-previews">This article on using SwiftData with previews</a> set out a useful approach using a <code>DataController</code> class, which could be passed in to my Journal view like:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token other-directive property">#Preview</span> <span class="token punctuation">{</span>
+    <span class="token class-name">JournalView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">modelContainer</span><span class="token punctuation">(</span><span class="token class-name">DataController</span><span class="token punctuation">.</span>previewContainer<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>First though I needed to generate some realistic-looking data. To do this I created a <code>JournalData</code> class that contains some methods such as <code>generateHistoryFromContext</code>. This method takes a desired number of weeks for which to generate a history, as well as some context (the user's weekly schedule and training level).</p>
+<p>It then starts with the current date, and for each week, applies the weekly schedule to simulate recording the required exercises. To simulate progression, I also adjust the user's levels back every other week so that it looks like they are improving over time.</p>
+<div style="max-width: 300px"><picture><source type="image/avif" srcset="/img/0BZk75Ar50-650.avif 650w"><source type="image/webp" srcset="/img/0BZk75Ar50-650.webp 650w"><img alt="An overview of exercises" loading="lazy" decoding="async" src="/img/0BZk75Ar50-650.png" width="650" height="1332"></picture></div>
+<h2 id="grouping-data" tabindex="-1">Grouping data <a class="header-anchor" href="#grouping-data">#</a></h2>
+<p>As you can see above, these are sorted by date and then grouped by month. To do this I used the <a href="https://www.hackingwithswift.com/example-code/language/how-to-group-arrays-using-dictionaries">grouping property</a> in the <code>Dictionary</code> class:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> groupedByDay <span class="token operator">=</span> <span class="token class-name">Dictionary</span><span class="token punctuation">(</span>grouping<span class="token punctuation">:</span> journalEntries<span class="token punctuation">)</span> <span class="token punctuation">{</span> entry <span class="token keyword">in</span>
+    <span class="token keyword">return</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">startOfDay</span><span class="token punctuation">(</span><span class="token keyword">for</span><span class="token punctuation">:</span> entry<span class="token punctuation">.</span>date<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This created a dictionary with the values being groups of exercises performed on each day. To sort these, I sorted them by day:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> sortedGroups <span class="token operator">=</span> groupedByDay<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> <span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+<p>To make dates easier to display for each entry, I then mapped the <code>sortedGroups</code> into a struct that allowed me to format the date:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">GroupedJournalEntries</span><span class="token punctuation">:</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token function">UUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> date<span class="token punctuation">:</span> <span class="token class-name">Date</span>
+    <span class="token keyword">let</span> entries<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">ExerciseType</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">JournalEntry</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">var</span> dateFormatted<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> numberFormatter <span class="token operator">=</span> <span class="token class-name">NumberFormatter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        numberFormatter<span class="token punctuation">.</span>numberStyle <span class="token operator">=</span> <span class="token punctuation">.</span>ordinal
+
+        <span class="token keyword">let</span> formatter <span class="token operator">=</span> <span class="token class-name">DateFormatter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        formatter<span class="token punctuation">.</span>dateFormat <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"EEEE"</span></span>
+
+        <span class="token keyword">let</span> day <span class="token operator">=</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token punctuation">.</span>day<span class="token punctuation">,</span> from<span class="token punctuation">:</span> date<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> ordinalDay <span class="token operator">=</span> numberFormatter<span class="token punctuation">.</span><span class="token function">string</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> <span class="token class-name">NSNumber</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> day<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">??</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">day</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span>
+
+        <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">formatter<span class="token punctuation">.</span><span class="token function">string</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> date<span class="token punctuation">)</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">ordinalDay</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This was applied in the above sorting/grouping step by returning <code>GroupedJournalEntries</code> for each sorted group entry:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">return</span> sortedGroups<span class="token punctuation">.</span>map <span class="token punctuation">{</span> date <span class="token keyword">in</span>
+    <span class="token keyword">let</span> entries <span class="token operator">=</span> groupedByDay<span class="token punctuation">[</span>date<span class="token punctuation">]</span><span class="token operator">!</span>
+    <span class="token keyword">let</span> entriesByExerciseType <span class="token operator">=</span> <span class="token class-name">Dictionary</span><span class="token punctuation">(</span>grouping<span class="token punctuation">:</span> entries<span class="token punctuation">,</span> by<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token short-argument">$0</span><span class="token punctuation">.</span>exerciseType <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token class-name">GroupedJournalEntries</span><span class="token punctuation">(</span>date<span class="token punctuation">:</span> date<span class="token punctuation">,</span> entries<span class="token punctuation">:</span> entriesByExerciseType<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="grouping-the-groups" tabindex="-1">Grouping the groups <a class="header-anchor" href="#grouping-the-groups">#</a></h3>
+<p>I then wanted another layer on top, grouping and sorting by month. This was the same but instead of starting with individual journal entries, I grouped the groupEntries based om the <code>year</code> and <code>month</code> date components:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> groupedByMonth <span class="token operator">=</span> <span class="token class-name">Dictionary</span><span class="token punctuation">(</span>grouping<span class="token punctuation">:</span> groupedEntries<span class="token punctuation">)</span> <span class="token punctuation">{</span> groupedEntry <span class="token keyword">in</span>
+    <span class="token keyword">let</span> components <span class="token operator">=</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">dateComponents</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">.</span>year<span class="token punctuation">,</span> <span class="token punctuation">.</span>month<span class="token punctuation">]</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> groupedEntry<span class="token punctuation">.</span>date<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> components<span class="token punctuation">)</span><span class="token operator">!</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> sortedMonths <span class="token operator">=</span> groupedByMonth<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> <span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+<p>This gave me a dictionary of grouped months, each containing as a value a dictionary of grouped journal entries by day:</p>
+<h3 id="mock-testing-data-sorted" tabindex="-1">Mock / testing data sorted <a class="header-anchor" href="#mock-testing-data-sorted">#</a></h3>
+<p>The end result was pretty good to get started. I'd like to do more to adjust it to have skipped days, variance in the reps numbers, and maybe model some over or under-performing users. That data will be useful later for calculating progression scores. However for now I can at least see how the basic data looks:</p>
+<div style="display: flex">
+  <picture><source type="image/avif" srcset="/img/dZuLTPgGa6-646.avif 646w"><source type="image/webp" srcset="/img/dZuLTPgGa6-646.webp 646w"><img alt="An overview of exercises" loading="lazy" decoding="async" src="/img/dZuLTPgGa6-646.png" width="646" height="1326"></picture>
+  <picture><source type="image/avif" srcset="/img/_nIW_RAIgH-646.avif 646w"><source type="image/webp" srcset="/img/_nIW_RAIgH-646.webp 646w"><img alt="An overview of exercises" loading="lazy" decoding="async" src="/img/_nIW_RAIgH-646.png" width="646" height="1326"></picture>
+</div>
+<p>The above uses <a href="https://developer.apple.com/documentation/swiftui/disclosuregroup">DisclosureGroup</a> views to contain each day, and Section views for each month.</p>
+<h2 id="keeping-screen-awake-during-timed-exercises" tabindex="-1">Keeping screen awake during timed exercises <a class="header-anchor" href="#keeping-screen-awake-during-timed-exercises">#</a></h2>
+<p>A TestFlight tester found one subtle issue in which the screen would turn off when doing timed exercises, and the timer would pause. To work around this I used <code>UIApplication.shared.isIdleTimerDisabled</code> (<a href="https://www.hackingwithswift.com/example-code/system/how-to-stop-the-screen-from-going-to-sleep">as described on Hacking with Swift</a>).</p>
+<p>This was set to <code>true</code> when the timer starts, and <code>false</code> when the timer is stopped or paused.</p>
+<h2 id="userdefaults-and-icloud" tabindex="-1">UserDefaults and iCloud <a class="header-anchor" href="#userdefaults-and-icloud">#</a></h2>
+<p>I found there's a useful class called <a href="https://github.com/MugunthKumar/MKiCloudSync">MKiCloudSync</a>. To use it I'd have to adjust my code to have some naming convention around the UserDefault values I'd like to sync with iCloud. Also, the code looks very old and isn't maintained, so I'm not entirely confident in it.</p>
+<p>Having said that, the code is a simple wrapped around <a href="https://developer.apple.com/documentation/foundation/nsubiquitouskeyvaluestore">NSUbiquitousKeyValueStore</a>, so I could always write a little logic that checks if the local UserDefault values are empty and tries to load them from the store, while also backing up any changed values to the store as the app is used.</p>
+<p>I've not managed to get this in place yet so will be pushing it to a future update.</p>
+<h2 id="current-todo-list" tabindex="-1">Current TODO list <a class="header-anchor" href="#current-todo-list">#</a></h2>
+<p>Based on what I learned this week, I'd like to work on the following this week:</p>
+<ul>
+<li>Planning a &quot;Progression indicator&quot; value which could help inform people when it's time to progress to the next level</li>
+<li>Looking into a weekly &quot;Done&quot; state for each day, like in the app <code>Zero</code></li>
+<li>Continue looking into adding iCloud backup for UserDefaults</li>
+</ul>
+<p>Thanks for reading, and if you want to see my app as it is built, feel free to <a href="https://testflight.apple.com/join/Keq4Mca2">download Reps on TestFlight</a>.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/dev-diary-03/">iCloud and screen sizes</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- Current page: /journal-data-sorting-and-bug-fixes/ -->
+	</body>
+</html>
