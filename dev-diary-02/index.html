@@ -234,8 +234,9 @@ body {
 html {
     overflow-y: scroll;
 }
-body {
+main {
     max-width: 60em;
+    margin: 0 auto;
 }
 
 
@@ -339,6 +340,8 @@ header {
     flex-wrap: wrap;
     align-items: center;
     padding: 1em;
+    max-width: 60em;
+    margin: 0 auto;
 }
 .home-link {
     margin-right: auto;
@@ -484,7 +487,7 @@ h2 + .header-anchor {
 .home-image img {
     max-width: 295px;
     margin: 2em 5em;
-    border: 0.25em solid #fff;
+    border: 0.25em solid #555;
     border-radius: 2em;
     overflow: hidden;
 }
@@ -505,6 +508,15 @@ h2 + .header-anchor {
         border: 0.15em solid #fff;
         border-radius: 1em;
     }
+}
+
+footer {
+    background: var(--color-highlight);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    padding: 4em;
+    margin-top: 4em;
 }</style>
 	</head>
 	<body>
@@ -596,7 +608,9 @@ h2 + .header-anchor {
 
 		</main>
 
-		<footer></footer>
+		<footer>
+		  <p>&copy; Copyright 2024 Donovan Hutchinson</p>
+		</footer>
 
 		<!-- Current page: /dev-diary-02/ -->
 	</body>
