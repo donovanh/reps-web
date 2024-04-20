@@ -3,12 +3,179 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Reps App - Reps - Bodyweight Exercises</title>
-		<meta name="description" content="Info about my Reps app.">
+		<title>Polish, Progress Scores And Rings - Reps - Bodyweight Exercises</title>
+		<meta name="description" content="A description that will show as subtitle and also on social sharing">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Reps - Bodyweight Exercises">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Reps - Bodyweight Exercises">
 		
-		<style>.postlist { counter-reset: start-from 5 }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
 * { box-sizing: border-box; }
 /* Defaults */
 :root {
@@ -350,7 +517,7 @@ h2 + .header-anchor {
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
-					<li class="nav-item"><a href="/" aria-current="page">Home</a></li>
+					<li class="nav-item"><a href="/">Home</a></li>
 					<li class="nav-item"><a href="/about/">About</a></li>
 					<li class="nav-item"><a href="/privacy/">Privacy</a></li>
 				<li><a href="https://testflight.apple.com/join/Keq4Mca2" target="_blank">TestFlight</a></li>
@@ -360,74 +527,37 @@ h2 + .header-anchor {
 
 		<main id="skip">
 			
+<div class="post-content">
+    <h1>Polish, Progress Scores And Rings</h1>
 
-<div class="home-layout">
-    <div class="home-image">
-        <picture><source type="image/avif" srcset="/img/IgePD1gDH1-591.avif 591w"><source type="image/webp" srcset="/img/IgePD1gDH1-591.webp 591w"><img alt="Reps app, showing a pushup progression view." loading="lazy" decoding="async" src="/img/IgePD1gDH1-591.jpeg" width="591" height="1280"></picture>
-    </div>
+    <ul class="post-metadata">
+    	<li><time datetime="2024-03-09">09 March 2024</time></li>
+    	<li><a href="/tags/dev/" class="post-tag">dev</a>, </li>
+    	<li><a href="/tags/dev-diary/" class="post-tag">dev-diary</a></li>
+    </ul>
 
-    <div class="home-content">
-        <h1>Reps</h1>
+    <h2 id="progress-indicators" tabindex="-1">Progress indicators <a class="header-anchor" href="#progress-indicators">#</a></h2>
+<ul>
+<li>https://sarunw.com/posts/swiftui-circular-progress-bar/</li>
+</ul>
+<h2 id="weekly-overview" tabindex="-1">Weekly overview <a class="header-anchor" href="#weekly-overview">#</a></h2>
+<ul>
+<li>https://developer.apple.com/documentation/foundation/locale/components/3952286-firstdayofweek</li>
+</ul>
+<h2 id="animated-icon" tabindex="-1">Animated icon <a class="header-anchor" href="#animated-icon">#</a></h2>
+<h2 id="performance-tweaks-and-loading-animations" tabindex="-1">Performance tweaks and loading animations <a class="header-anchor" href="#performance-tweaks-and-loading-animations">#</a></h2>
+<h2 id="visual-contrast" tabindex="-1">Visual contrast <a class="header-anchor" href="#visual-contrast">#</a></h2>
+<h2 id="privacy-and-encryption-compliance" tabindex="-1">Privacy and encryption compliance <a class="header-anchor" href="#privacy-and-encryption-compliance">#</a></h2>
+<h2 id="current-todo-list" tabindex="-1">Current TODO list <a class="header-anchor" href="#current-todo-list">#</a></h2>
 
-        <p>Get strong with bodyweight exercises - no equipment needed*. Reps tracks your weekly workouts and helps you progress.</p>
-
-        <p>With easy routine building and guided progressions, it's never been easier to track your bodyweight fitness journey.</p>
-
-        <p><em>* Except a pull-up bar, tree branch or similar.</em></p>
-
-        <div class="testflight-callout">
-       	<p>Reps is currently available as a super-early <a href="https://testflight.apple.com/join/Keq4Mca2">test version on TestFlight</a></p>
-        </div>
-    </div>
+    <ul class="links-nextprev"><li>Previous: <a href="/journal-data-sorting-and-grouping/">Journal Data Mocking, Sorting And Grouping</a></li>
+    </ul>
 </div>
-
-<div class="post-list">
-    
-    
-    <h1>Latest 4 Posts</h1>
-
-    
-    
-    <div class="post-list">
-    <ol reversed class="postlist">
-    
-    	<li class="postlist-item">
-    		<a href="/journal-data-sorting-and-grouping/" class="postlist-link">Journal Data Mocking, Sorting And Grouping</a>
-    		<time class="postlist-date" datetime="2024-03-02">March 2024</time>
-    	</li>
-    
-    	<li class="postlist-item">
-    		<a href="/dev-diary-03/" class="postlist-link">iCloud and screen sizes</a>
-    		<time class="postlist-date" datetime="2024-02-24">February 2024</time>
-    	</li>
-    
-    	<li class="postlist-item">
-    		<a href="/dev-diary-02/" class="postlist-link">TestFlight &amp; Timers</a>
-    		<time class="postlist-date" datetime="2024-02-19">February 2024</time>
-    	</li>
-    
-    	<li class="postlist-item">
-    		<a href="/dev-diary-01/" class="postlist-link">Reps app idea and initial build</a>
-    		<time class="postlist-date" datetime="2024-02-09">February 2024</time>
-    	</li>
-    
-    </ol>
-</div>
-
-
-    
-    
-
-
-    
-    
-</div>
-
 
 		</main>
 
 		<footer></footer>
 
-		<!-- Current page: / -->
+		<!-- Current page: /polish-progress-scores-and-rings/ -->
 	</body>
 </html>

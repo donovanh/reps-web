@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Reps - Bodyweight Exercises</title>
+		<title>Privacy - Reps - Bodyweight Exercises</title>
 		<meta name="description" content="Info about my Reps app.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Reps - Bodyweight Exercises">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Reps - Bodyweight Exercises">
@@ -11,295 +11,341 @@
 		<style>* { box-sizing: border-box; }
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
-		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
-		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
-		Courier, monospace;
+    --font-family: -apple-system, system-ui, sans-serif;
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT,
+        Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+        Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+        Courier, monospace;
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #c0c0c0;
-	--color-gray-90: #333;
+    --color-gray-20: #e0e0e0;
+    --color-gray-50: #c0c0c0;
+    --color-gray-90: #333;
+    --color-highlight: #37ff12;
 
-	--background-color: #fff;
+    --background-color: #000;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050f;
+    --text-color: var(--color-gray-20);
+    --text-color-link: var(--color-highlight);
+    --text-color-link-active: var(--color-highlight);
+    --text-color-link-visited: var(--color-highlight);
 
-	--syntax-tab-size: 2;
+    --syntax-tab-size: 2;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #c0c0c0;
-		--color-gray-90: #dad8d8;
+    :root {
+        --color-gray-20: #e0e0e0;
+        --color-gray-50: #c0c0c0;
+        --color-gray-90: #dad8d8;
 
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
+        /* --text-color is assigned to --color-gray-_ above */
+        --text-color-link: var(--color-highlight);
+        --text-color-link-active: #6969f7;
+        --text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
-	}
-}
+        --background-color: #15202b;
+    }
+} */
 
 /* Global stylesheet */
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
+    padding: 0;
+    margin: 0 auto;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 html {
-	overflow-y: scroll;
+    overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+    max-width: 60em;
+}
+
+
+.post-content {
+    max-width: 40em;
+    margin: 0 auto;
+}
+
+.post-list {
+    max-width: 40em;
+    margin: 0 auto;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 p:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 p {
-	line-height: 1.5;
+    line-height: 1.5;
 }
 
 li {
-	line-height: 1.5;
+    line-height: 1.5;
 }
 
 a[href] {
-	color: var(--text-color-link);
+    color: var(--text-color-link);
+    text-decoration: none;
 }
 a[href]:visited {
-	color: var(--text-color-link-visited);
+    color: var(--text-color-link-visited);
 }
 a[href]:hover,
 a[href]:active {
-	color: var(--text-color-link-active);
+    text-decoration: underline;
 }
 
 main {
-	padding: 1rem;
+    padding: 1rem;
 }
 main :first-child {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 main img {
-	height: auto;
-	max-width: 100%;
-}
-
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
-header:after {
-	content: "";
-	display: table;
-	clear: both;
+    height: auto;
+    max-width: 100%;
 }
 
 .links-nextprev {
-	list-style: none;
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
+    list-style: none;
+    border-top: 1px dashed var(--color-gray-20);
+    padding: 1em 0;
 }
 
 table {
-	margin: 1em 0;
+    margin: 1em 0;
 }
 table td,
 table th {
-	padding-right: 1em;
+    padding-right: 1em;
 }
 
 pre,
 code {
-	font-family: var(--font-family-monospace);
+    font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
-	margin: 0.5em 0;
-	line-height: 1.375; /* 22px /16 */
-	-moz-tab-size: var(--syntax-tab-size);
-	-o-tab-size: var(--syntax-tab-size);
-	tab-size: var(--syntax-tab-size);
-	-webkit-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
+    margin: 0.5em 0;
+    line-height: 1.375; /* 22px /16 */
+    -moz-tab-size: var(--syntax-tab-size);
+    -o-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
 }
 code {
-	word-break: break-all;
+    word-break: break-all;
 }
 
 /* Header */
 header {
-	display: flex;
-	gap: 1em 0.5em;
-	flex-wrap: wrap;
-	align-items: center;
-	padding: 1em;
+    display: flex;
+    gap: 1em 0.5em;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1em;
 }
 .home-link {
-	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
-	margin-right: 2em;
+    margin-right: auto;
+}
+.home-link img {
+    width: 64px;
+    height: 64px;
 }
 .home-link:link:not(:hover) {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 /* Nav */
 .nav {
-	display: flex;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0 0 0 auto;
+    list-style: none;
 }
 .nav-item {
-	display: inline-block;
-	margin-right: 1em;
+    display: inline-block;
+    margin-right: 1em;
 }
 .nav-item a[href]:not(:hover) {
-	text-decoration: none;
+    text-decoration: none;
 }
-.nav a[href][aria-current="page"] {
-	text-decoration: underline;
-}
+/* .nav a[href][aria-current="page"] {
+    text-decoration: underline;
+} */
 
 /* Posts list */
 .postlist {
-	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
+    list-style: none;
+    padding: 0;
+    padding-left: 1.5rem;
 }
 .postlist-item {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
-	margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    counter-increment: start-from -1;
+    margin-bottom: 1em;
 }
 .postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
+    display: inline-block;
+    pointer-events: none;
+    content: "" counter(start-from, decimal-leading-zero) ". ";
+    line-height: 100%;
+    text-align: right;
+    margin-left: -1.5rem;
 }
 .postlist-date,
 .postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+    font-size: 0.8125em; /* 13px /16 */
+    color: var(--color-gray-90);
 }
 .postlist-date {
-	word-spacing: -0.5px;
+    word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
-	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: 0.25em;
-	padding-right: 0.5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
+    font-size: 1.1875em; /* 19px /16 */
+    font-weight: 700;
+    flex-basis: calc(100% - 1.5rem);
+    padding-left: 0.25em;
+    padding-right: 0.5em;
+    /* text-underline-position: from-font;
+    text-underline-offset: 0;
+    text-decoration-thickness: 1px; */
 }
 .postlist-item-active .postlist-link {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /* Tags */
 .post-tag {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-transform: capitalize;
-	font-style: italic;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-style: italic;
 }
 .postlist-item > .post-tag {
-	align-self: center;
+    align-self: center;
 }
 
 /* Tags list */
 .post-metadata {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: 0.5em;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .post-metadata time {
-	margin-right: 1em;
+    margin-right: 1em;
 }
 
 /* Direct Links / Markdown Headers */
 .header-anchor {
-	text-decoration: none;
-	font-style: normal;
-	font-size: 1em;
-	margin-left: 0.1em;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 1em;
+    margin-left: 0.1em;
 }
 a[href].header-anchor,
 a[href].header-anchor:visited {
-	color: transparent;
+    color: transparent;
 }
 a[href].header-anchor:focus,
 a[href].header-anchor:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 a[href].header-anchor:focus,
 :hover > a[href].header-anchor {
-	color: #aaa;
+    color: #aaa;
 }
 
 h2 + .header-anchor {
-	font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .testflight-callout {
-	border: 4px solid rgba(255, 255, 255, 0.25);
-	border-radius: 1rem;
-	background-color: rgba(255, 255, 255, 0.1);
-	padding: 2rem;
-	text-align: center;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2em;
+    text-align: center;
+}
+
+/* Home page */
+.home-layout {
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.home-layout h1 {
+    font-size: 5em;
+    margin: 0;
+}
+
+.home-image img {
+    max-width: 295px;
+    margin: 2em 5em;
+    border: 0.25em solid #fff;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+@media (max-width: 720px) {
+    .home-layout {
+        align-items: start;
+    }
+
+    .home-layout h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+
+    .home-image img {
+        max-width: 120px;
+        margin: 0.5em 2em;
+        border: 0.15em solid #fff;
+        border-radius: 1em;
+    }
 }</style>
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">Reps - Bodyweight Exercises</a>
+			<a href="/" class="home-link">
+			 <img src="/img/reps-icon.png"  alt="Reps icon" />
+			</a>
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
@@ -313,15 +359,17 @@ h2 + .header-anchor {
 
 		<main id="skip">
 			
-<h1 id="privacy-policy" tabindex="-1">Privacy Policy <a class="header-anchor" href="#privacy-policy">#</a></h1>
+<div class="post-content">
+<h1 id="privacy-policy">Privacy Policy</h1>
 <p>The Reps application does not collect, use, save or have access to any personal data recorded in the application.</p>
 <p>When using the application, data is stored on-device relating to your weekly workout routine (exercise types and level). As you record workouts, the date, exercise type and level are saved on the device.</p>
-<p>This data is not transferred to any other location, beyond your device's own iCloud settings or backups.</p>
-<h2 id="usage-monitoring" tabindex="-1">Usage monitoring <a class="header-anchor" href="#usage-monitoring">#</a></h2>
+<p>This data is not transferred to any other location, beyond your device&#39;s own iCloud settings or backups.</p>
+<h2 id="usage-monitoring">Usage monitoring</h2>
 <p>The application does not contain any tracking or monitoring.</p>
 <p>Should this change, this policy will be updated to reflect any data collected, whether any of it is identifiable, and how requests for it to be erased can be handled.</p>
-<h2 id="questions" tabindex="-1">Questions <a class="header-anchor" href="#questions">#</a></h2>
+<h2 id="questions">Questions</h2>
 <p>Any questions or messages can be directed to <a href="mailto:reps@hop.ie">reps@hop.ie</a>.</p>
+</div>
 
 
 		</main>
