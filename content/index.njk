@@ -1,4 +1,5 @@
 ---
+title: Reps App
 layout: layouts/home.njk
 eleventyNavigation:
   key: Home
@@ -6,37 +7,47 @@ eleventyNavigation:
 numberOfLatestPostsToShow: 5
 ---
 
-<h1>Reps</h1>
+<div class="home-layout">
+    <div class="home-image">
+        {% image "../public/img/image-1.jpeg", "Reps app, showing a pushup progression view." %}
+    </div>
 
-<p>Get strong with bodyweight exercises - no equipment needed*. Reps tracks your weekly workouts and helps you progress.</p>
+    <div class="home-content">
+        <h1>Reps</h1>
 
-<p>With easy routine building and guided progressions, it's never been easier to track your bodyweight fitness journey.</p>
+        <p>Get strong with bodyweight exercises - no equipment needed*. Reps tracks your weekly workouts and helps you progress.</p>
 
-<p><em>* Except a pull-up bar, tree branch or similar.</em></p>
+        <p>With easy routine building and guided progressions, it's never been easier to track your bodyweight fitness journey.</p>
 
-<div class="testflight-callout">
-	<p>Reps is currently available as a super-early <a href="https://testflight.apple.com/join/Keq4Mca2">test version on TestFlight</a></p>
+        <p><em>* Except a pull-up bar, tree branch or similar.</em></p>
+
+        <div class="testflight-callout">
+       	<p>Reps is currently available as a super-early <a href="https://testflight.apple.com/join/Keq4Mca2">test version on TestFlight</a></p>
+        </div>
+    </div>
 </div>
 
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<div class="post-list">
+    {% set postsCount = collections.posts | length %}
+    {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+    <h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+    {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+    {% set postslistCounter = postsCount %}
+    {% include "postslist.njk" %}
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
+    {% set morePosts = postsCount - numberOfLatestPostsToShow %}
+    {% if morePosts > 0 %}
+    <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+    {% endif %}
 
 
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+    {# List every content page in the project #}
+    {#
+    <ul>
+    	{%- for entry in collections.all %}
+    	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
+    	{%- endfor %}
+    </ul>
+    #}
+</div>
