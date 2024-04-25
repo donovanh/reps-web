@@ -351,6 +351,10 @@ footer {
     justify-content: center;
     padding: 4em;
     margin-top: 4em;
+}
+
+.footer-content {
+    text-align: center;
 }</style>
 	</head>
 	<body>
@@ -366,7 +370,6 @@ footer {
 					<li class="nav-item"><a href="/" aria-current="page">Home</a></li>
 					<li class="nav-item"><a href="/about/">About</a></li>
 					<li class="nav-item"><a href="/privacy/">Privacy</a></li>
-				<li><a href="https://testflight.apple.com/join/Keq4Mca2" target="_blank">TestFlight</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -376,7 +379,9 @@ footer {
 
 <div class="home-layout">
     <div class="home-image">
-        <picture><source type="image/avif" srcset="/img/J_1LAd9iJf-591.avif 591w"><source type="image/webp" srcset="/img/J_1LAd9iJf-591.webp 591w"><img alt="Reps app, showing a pushup progression view." loading="lazy" decoding="async" src="/img/J_1LAd9iJf-591.jpeg" width="591" height="1280"></picture>
+        <a href="https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819">
+            <picture><source type="image/avif" srcset="/img/J_1LAd9iJf-591.avif 591w"><source type="image/webp" srcset="/img/J_1LAd9iJf-591.webp 591w"><img alt="Reps app, showing a pushup progression view." loading="lazy" decoding="async" src="/img/J_1LAd9iJf-591.jpeg" width="591" height="1280"></picture>
+        </a>
     </div>
 
     <div class="home-content">
@@ -388,9 +393,7 @@ footer {
 
         <p><em>* Except a pull-up bar, tree branch or similar.</em></p>
 
-        <div class="testflight-callout">
-       	<p>Reps is currently available as a super-early <a href="https://testflight.apple.com/join/Keq4Mca2">test version on TestFlight</a></p>
-        </div>
+        <a href="https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819"><img src="/img/download.svg" alt="Download Reps on the app store"/></a>
     </div>
 </div>
 
@@ -440,7 +443,14 @@ footer {
 		</main>
 
 		<footer>
-		  <p>&copy; Copyright 2024 Donovan Hutchinson</p>
+		    <div class="footer-content">
+                <p>&copy; Copyright 2024 Donovan Hutchinson</p>
+                <p>
+                    <a href="https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819">
+                   	    <img src="/img/download.svg" alt="Download Reps on the app store"/>
+                    </a>
+                </p>
+            </div>
 		</footer>
 
 		<!-- Current page: / -->
