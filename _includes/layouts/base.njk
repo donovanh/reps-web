@@ -48,7 +48,6 @@
 				{%- for entry in collections.all | eleventyNavigation %}
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
-				<li><a href="https://testflight.apple.com/join/Keq4Mca2" target="_blank">TestFlight</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -58,7 +57,14 @@
 		</main>
 
 		<footer>
-		  <p>&copy; Copyright 2024 Donovan Hutchinson</p>
+		    <div class="footer-content">
+                <p>&copy; Copyright 2024 Donovan Hutchinson</p>
+                <p>
+                    <a href="https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819">
+                   	    <img src="/img/download.svg" alt="Download Reps on the app store"/>
+                    </a>
+                </p>
+            </div>
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
