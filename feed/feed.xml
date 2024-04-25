@@ -89,7 +89,7 @@
 &lt;li&gt;Looking into a weekly &amp;quot;Done&amp;quot; state for each day, like in the app &lt;code&gt;Zero&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Continue looking into adding iCloud backup for UserDefaults&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, feel free to &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;download Reps on TestFlight&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, you can &lt;a href=&quot;https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819&quot;&gt;try Reps for free&lt;/a&gt;.&lt;/p&gt;
 </content>
 	</entry>
 	
@@ -98,7 +98,7 @@
 		<link href="https://reps.hop.ie/dev-diary-03/"/>
 		<updated>2024-02-24T00:00:00Z</updated>
 		<id>https://reps.hop.ie/dev-diary-03/</id>
-		<content type="html">&lt;p&gt;Last week I launched my &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;Reps app on TestFlight&lt;/a&gt; for any curious early testers to try out. This week I looked into how I can persist recorded data, and adjusted layouts for smaller screens.&lt;/p&gt;
+		<content type="html">&lt;p&gt;I&#39;ve now launched &lt;a href=&quot;https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819&quot;&gt;Reps&lt;/a&gt; on the app store. This week I looked into how I can persist recorded data, and adjusted layouts for smaller screens.&lt;/p&gt;
 &lt;h2 id=&quot;todo-check-in&quot; tabindex=&quot;-1&quot;&gt;TODO Check-in &lt;a class=&quot;header-anchor&quot; href=&quot;https://reps.hop.ie/dev-diary-03/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Last week I set out a bunch of tasks of various sizes that I hoped to tackle this week. I managed to clear up most of them, including:&lt;/p&gt;
 &lt;ul&gt;
@@ -143,7 +143,7 @@
 &lt;li&gt;Planning a &amp;quot;Progression indicator&amp;quot; value which could help inform people when it&#39;s time to progress to the next level&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The last one is going to be a core feature of this app, and one I&#39;d hope to refine over time. I&#39;ve got to start somewhere though so I think I&#39;ll aim for something super-simple and work from there.&lt;/p&gt;
-&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, feel free to &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;download Reps on TestFlight&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, you can &lt;a href=&quot;https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819&quot;&gt;try Reps for free&lt;/a&gt;.&lt;/p&gt;
 </content>
 	</entry>
 	
@@ -152,7 +152,7 @@
 		<link href="https://reps.hop.ie/dev-diary-02/"/>
 		<updated>2024-02-19T00:00:00Z</updated>
 		<id>https://reps.hop.ie/dev-diary-02/</id>
-		<content type="html">&lt;p&gt;Last week I launched my &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;Reps app on TestFlight&lt;/a&gt; for any curious early testers to try out. I also started using it properly myself and as a result, I&#39;ve a long list of things I really want to improve right away.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Last week I launched my &lt;a href=&quot;https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819&quot;&gt;Reps app&lt;/a&gt; on TestFlight for any curious early testers to try out. I also started using it properly myself and as a result, I&#39;ve a long list of things I really want to improve right away.&lt;/p&gt;
 &lt;h2 id=&quot;testflight-no-testing-like-user-testing&quot; tabindex=&quot;-1&quot;&gt;TestFlight: No testing like user testing &lt;a class=&quot;header-anchor&quot; href=&quot;https://reps.hop.ie/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;No matter how much time spent going through user flows in the simulator, it&#39;s an entirely different experience using an app for real on a device. In my case, when I started using my app in the morning to log a workout, I immediately spotted a bunch of small (and large) issues.&lt;/p&gt;
 &lt;p&gt;I also wanted to bring in some external testers to try to get some feedback. To do this I enrolled in &lt;a href=&quot;https://appstoreconnect.apple.com&quot;&gt;App Store Connect&lt;/a&gt;, which included a €99-per-year fee, and &lt;a href=&quot;https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases&quot;&gt;pushed an archive of my app to TestFlight&lt;/a&gt;.&lt;/p&gt;
@@ -204,7 +204,7 @@
 &lt;li&gt;Improve the animation between exercises (it&#39;s a bit choppy)&lt;/li&gt;
 &lt;li&gt;... and a bunch of small UI tweaks&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, feel free to &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;download Reps on TestFlight&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, you can &lt;a href=&quot;https://apps.apple.com/app/reps-bodyweight-exercises/id6477761819&quot;&gt;try Reps for free&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
 	</entry>
 	
