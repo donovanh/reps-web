@@ -8,7 +8,7 @@ tags:
   - dev-diary
 ---
 
-Last week I launched my [Reps app on TestFlight](https://testflight.apple.com/join/Keq4Mca2) for any curious early testers to try out. This week I looked into how I can persist recorded data, and adjusted layouts for smaller screens.
+I've now launched [Reps]({{metadata.appLink}}) on the app store. This week I looked into how I can persist recorded data, and adjusted layouts for smaller screens.
 
 ## TODO Check-in
 
@@ -75,4 +75,4 @@ Based on what I learned this week, I'd like to work on the following this week:
 
 The last one is going to be a core feature of this app, and one I'd hope to refine over time. I've got to start somewhere though so I think I'll aim for something super-simple and work from there.
 
-Thanks for reading, and if you want to see my app as it is built, feel free to [download Reps on TestFlight](https://testflight.apple.com/join/Keq4Mca2).
+Thanks for reading, and if you want to see my app as it is built, you can [try Reps for free]({{metadata.appLink}}).

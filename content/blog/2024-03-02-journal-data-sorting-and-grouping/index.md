@@ -126,4 +126,4 @@ Based on what I learned this week, I'd like to work on the following this week:
 - Looking into a weekly "Done" state for each day, like in the app `Zero`
 - Continue looking into adding iCloud backup for UserDefaults
 
-Thanks for reading, and if you want to see my app as it is built, feel free to [download Reps on TestFlight](https://testflight.apple.com/join/Keq4Mca2).
+Thanks for reading, and if you want to see my app as it is built, you can [try Reps for free]({{metadata.appLink}}).

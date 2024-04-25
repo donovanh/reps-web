@@ -8,7 +8,7 @@ tags:
   - dev-diary
 ---
 
-Last week I launched my [Reps app on TestFlight](https://testflight.apple.com/join/Keq4Mca2) for any curious early testers to try out. I also started using it properly myself and as a result, I've a long list of things I really want to improve right away.
+Last week I launched my [Reps app]({{metadata.appLink}}) on TestFlight for any curious early testers to try out. I also started using it properly myself and as a result, I've a long list of things I really want to improve right away.
 
 ## TestFlight: No testing like user testing
 
@@ -90,4 +90,4 @@ I've since picked up a bunch more items for the TODO list. Some highlights that 
 - Improve the animation between exercises (it's a bit choppy)
 - ... and a bunch of small UI tweaks
 
-Thanks for reading, and if you want to see my app as it is built, feel free to [download Reps on TestFlight](https://testflight.apple.com/join/Keq4Mca2).
+Thanks for reading, and if you want to see my app as it is built, you can [try Reps for free]({{metadata.appLink}}).
